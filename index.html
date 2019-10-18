@@ -1,0 +1,27 @@
+<!-- 
+https://pushjs.org/docs/quick-start
+https://github.com/Nickersoft/push.js
+ -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="push.min.js"></script>
+<script src="serviceWorker.min.js"></script>
+<script>
+function start() {
+    Push.create("Hello world!", {
+        body: "How's it doing'?",
+        icon: './logo.png',
+        timeout: 4000,
+        onClick: function () {
+            window.focus();
+            this.close();
+        }
+    });
+}
+</script>
+<script>
+function clear() {
+    Push.clear();
+}
+</script>
+<a href="javascript:void(0)" onclick="start()" >Start</a>
+<a href="javascript:void(0)" onclick="clear()" >Clear</a>
